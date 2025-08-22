@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Library - SwasthyaTrack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sofia': ['sofia-pro', 'sans-serif'],
+          },
+          colors: {
+            primary: '#16a34a',
+            secondary: '#059669',
+            accent: '#22d3ee',
+            dark: '#0f172a',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sofia bg-gray-50">
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Exercise Header -->
+  <section class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16" data-id="exercise-header">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" data-id="exercise-title">
+        Indian Exercise Library
+      </h1>
+      <p class="text-xl text-purple-100 max-w-3xl mx-auto" data-id="exercise-description">
+        Discover traditional and modern exercises designed for Indian lifestyles. From yoga asanas to home workouts, find the perfect routine for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Exercise Categories -->
+  <section class="py-16 bg-white" data-id="exercise-categories">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6" data-id="categories-title">
+          Exercise Categories
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Choose from traditional Indian exercises and modern fitness routines
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <!-- Yoga Category -->
+        <div class="bg-gradient-to-br from-orange-500 to-red-500 p-8 rounded-2xl text-white cursor-pointer hover:scale-105 transition-transform" data-id="category-yoga">
+          <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <i data-lucide="user" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-2">Yoga & Pranayama</h3>
+          <p class="text-orange-100 text-center text-sm">Traditional poses and breathing exercises</p>
+          <div class="text-center mt-4">
+            <span class="text-2xl font-bold">25+</span>
+            <div class="text-xs text-orange-100">Asanas</div>
+          </div>
+        </div>
+
+        <!-- Home Workout Category -->
+        <div class="bg-gradient-to-br from-green-500 to-teal-500 p-8 rounded-2xl text-white cursor-pointer hover:scale-105 transition-transform" data-id="category-home">
+          <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <i data-lucide="home" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-2">Home Workouts</h3>
+          <p class="text-green-100 text-center text-sm">No equipment needed exercises</p>
+          <div class="text-center mt-4">
+            <span class="text-2xl font-bold">30+</span>
+            <div class="text-xs text-green-100">Exercises</div>
+          </div>
+        </div>
+
+        <!-- Cardio Category -->
+        <div class="bg-gradient-to-br from-blue-500 to-purple-500 p-8 rounded-2xl text-white cursor-pointer hover:scale-105 transition-transform" data-id="category-cardio">
+          <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <i data-lucide="heart" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-2">Cardio Training</h3>
+          <p class="text-blue-100 text-center text-sm">Heart-healthy exercises and routines</p>
+          <div class="text-center mt-4">
+            <span class="text-2xl font-bold">20+</span>
+            <div class="text-xs text-blue-100">Routines</div>
+          </div>
+        </div>
+
+        <!-- Strength Category -->
+        <div class="bg-gradient-to-br from-pink-500 to-rose-500 p-8 rounded-2xl text-white cursor-pointer hover:scale-105 transition-transform" data-id="category-strength">
+          <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <i data-lucide="dumbbell" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-2">Strength Building</h3>
+          <p class="text-pink-100 text-center text-sm">Build muscle with bodyweight exercises</p>
+          <div class="text-center mt-4">
+            <span class="text-2xl font-bold">15+</span>
+            <div class="text-xs text-pink-100">Exercises</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Workouts -->
+      <div class="bg-gray-50 rounded-2xl p-8" data-id="featured-workouts">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Featured Workouts</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Workout 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-id="workout-1">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=200&fit=crop&crop=center" 
+                 alt="Surya Namaskar" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-lg font-bold text-gray-900">Surya Namaskar</h4>
+                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Yoga</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">Complete sun salutation sequence for morning energy boost</p>
+              <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
+                  <span>15 mins</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="flame" class="w-4 h-4"></i>
+                  <span>120 cal</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="trending-up" class="w-4 h-4"></i>
+                  <span>Beginner</span>
+                </div>
+              </div>
+              <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Workout 2 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-id="workout-2">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop&crop=center" 
+                 alt="Home HIIT" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-lg font-bold text-gray-900">Home HIIT Workout</h4>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Cardio</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">High-intensity interval training you can do at home</p>
+              <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
+                  <span>20 mins</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="flame" class="w-4 h-4"></i>
+                  <span>250 cal</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="trending-up" class="w-4 h-4"></i>
+                  <span>Intermediate</span>
+                </div>
+              </div>
+              <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                Start Workout
+              </button>
+            </div>
+          </div>
+
+          <!-- Workout 3 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-id="workout-3">
+            <img src="https://images.unsplash.com/photo-1506629905403-4b2e72dd4b8a?w=400&h=200&fit=crop&crop=center" 
+                 alt="Meditation" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-lg font-bold text-gray-900">Evening Meditation</h4>
+                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Mindfulness</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">Relaxing meditation and breathing exercises</p>
+              <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
+                  <span>10 mins</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="heart" class="w-4 h-4"></i>
+                  <span>Stress Relief</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <i data-lucide="trending-up" class="w-4 h-4"></i>
+                  <span>All Levels</span>
+                </div>
+              </div>
+              <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                Start Session
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traditional Indian Exercises -->
+  <section class="py-16 bg-gray-50" data-id="traditional-exercises">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6" data-id="traditional-title">
+          Traditional Indian Exercises
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Ancient practices that have kept Indians healthy for centuries
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Exercise 1 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm" data-id="traditional-1">
+          <div class="w-16 h-16 bg-orange-500/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+            <i data-lucide="user" class="w-8 h-8 text-orange-500"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 text-center mb-2">Malasana (Squat)</h3>
+          <p class="text-gray-600 text-sm text-center mb-4">Traditional Indian squat pose for hip flexibility</p>
+          <div class="text-center">
+            <span class="text-primary font-medium">Hold 30-60 seconds</span>
+          </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm" data-id="traditional-2">
+          <div class="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+            <i data-lucide="wind" class="w-8 h-8 text-green-500"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 text-center mb-2">Pranayama</h3>
+          <p class="text-gray-600 text-sm text-center mb-4">Breathing exercises for lung capacity and calm</p>
+          <div class="text-center">
+            <span class="text-primary font-medium">5-10 minutes daily</span>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm" data-id="traditional-3">
+          <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+            <i data-lucide="move" class="w-8 h-8 text-blue-500"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 text-center mb-2">Dand (Push-ups)</h3>
+          <p class="text-gray-600 text-sm text-center mb-4">Traditional Hindu push-ups for strength</p>
+          <div class="text-center">
+            <span class="text-primary font-medium">10-20 reps</span>
+          </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm" data-id="traditional-4">
+          <div class="w-16 h-16 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+            <i data-lucide="rotate-ccw" class="w-8 h-8 text-purple-500"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 text-center mb-2">Baithak (Squats)</h3>
+          <p class="text-gray-600 text-sm text-center mb-4">Traditional Indian squats for leg strength</p>
+          <div class="text-center">
+            <span class="text-primary font-medium">15-30 reps</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exercise Tips -->
+  <section class="py-16 bg-white" data-id="exercise-tips">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6" data-id="tips-title">
+            Exercise Tips for Indians
+          </h2>
+          <p class="text-xl text-gray-600">
+            Make the most of your workout with these culturally relevant tips
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-white" data-id="tip-card-1">
+            <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+              <i data-lucide="sun" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Best Exercise Times</h3>
+            <ul class="space-y-2 text-green-100">
+              <li>• Early morning (6-8 AM) - Fresh air, cooler temperature</li>
+              <li>• Evening (5-7 PM) - After work, before dinner</li>
+              <li>• Avoid midday heat (11 AM - 3 PM)</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-orange-500 to-red-500 p-8 rounded-2xl text-white" data-id="tip-card-2">
+            <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+              <i data-lucide="thermometer" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Weather Considerations</h3>
+            <ul class="space-y-2 text-orange-100">
+              <li>• Monsoon: Indoor exercises, yoga</li>
+              <li>• Summer: Early morning outdoor activities</li>
+              <li>• Winter: Take advantage of pleasant weather</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-blue-500 to-purple-500 p-8 rounded-2xl text-white" data-id="tip-card-3">
+            <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+              <i data-lucide="droplets" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Hydration Tips</h3>
+            <ul class="space-y-2 text-blue-100">
+              <li>• Drink water 30 mins before exercise</li>
+              <li>• Include electrolytes (nimbu paani, coconut water)</li>
+              <li>• Avoid exercising immediately after meals</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-pink-500 to-rose-500 p-8 rounded-2xl text-white" data-id="tip-card-4">
+            <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+              <i data-lucide="users" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Family Fitness</h3>
+            <ul class="space-y-2 text-pink-100">
+              <li>• Include family in evening walks</li>
+              <li>• Teach children traditional games</li>
+              <li>• Group yoga sessions on weekends</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container" data-source="components/footer.html"></div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    
+    // Load shared components
+    await loadComponent('#navbar-container');
+    await loadComponent('#footer-container');
+    
+    // Initialize icons
+    lucide.createIcons();
+    
+    // Category selection
+    document.querySelectorAll('[data-id^="category-"]').forEach(category => {
+      category.addEventListener('click', () => {
+        const categoryName = category.dataset.id.replace('category-', '');
+        console.log('Category selected:', categoryName);
+        // Implement category filtering logic here
+        
+        // Add active state
+        document.querySelectorAll('[data-id^="category-"]').forEach(cat => {
+          cat.classList.remove('ring-4', 'ring-white', 'ring-opacity-50');
+        });
+        category.classList.add('ring-4', 'ring-white', 'ring-opacity-50');
+      });
+    });
+    
+    // Workout start buttons
+    document.querySelectorAll('[data-id^="workout-"] button').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const workoutCard = e.target.closest('[data-id^="workout-"]');
+        const workoutName = workoutCard.querySelector('h4').textContent;
+        console.log('Starting workout:', workoutName);
+        // Implement workout start logic here
+        
+        // Show loading state
+        button.textContent = 'Starting...';
+        button.disabled = true;
+        
+        setTimeout(() => {
+          button.textContent = 'Start Workout';
+          button.disabled = false;
+          alert(`Starting ${workoutName}! (Demo)`);
+        }, 1500);
+      });
+    });
+    
+    // Traditional exercise interactions
+    document.querySelectorAll('[data-id^="traditional-"]').forEach(exercise => {
+      exercise.addEventListener('click', () => {
+        const exerciseName = exercise.querySelector('h3').textContent;
+        console.log('Traditional exercise selected:', exerciseName);
+        // Implement exercise detail view logic here
+        
+        // Add selection feedback
+        exercise.classList.add('ring-2', 'ring-primary');
+        setTimeout(() => {
+          exercise.classList.remove('ring-2', 'ring-primary');
+        }, 1000);
+      });
+    });
+    
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

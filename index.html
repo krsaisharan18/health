@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwasthyaTrack - Your Health Companion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sofia': ['sofia-pro', 'sans-serif'],
+          },
+          colors: {
+            primary: '#16a34a',
+            secondary: '#059669',
+            accent: '#22d3ee',
+            dark: '#0f172a',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sofia bg-gray-50">
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-primary to-secondary text-white py-16 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="text-center lg:text-left" data-id="hero-content">
+          <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight" data-id="hero-title">
+            Your Complete
+            <span class="text-accent">Health Journey</span>
+            Starts Here
+          </h1>
+          <p class="text-lg sm:text-xl mb-8 text-gray-100 leading-relaxed" data-id="hero-description">
+            Track your fitness, nutrition, and wellness with AI-powered insights designed for Indian lifestyles. From yoga to dal-chawal, we understand your health needs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="signup.html" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg" data-id="hero-cta-signup">
+              Start Your Journey
+            </a>
+            <a href="login.html" class="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors" data-id="hero-cta-login">
+              Sign In
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center lg:justify-end" data-id="hero-image">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=500&fit=crop&crop=center" 
+               alt="Healthy lifestyle" 
+               class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-white" data-id="stats-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+        <div class="text-center" data-id="stat-1">
+          <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">10K+</div>
+          <div class="text-gray-600 text-sm sm:text-base">Active Users</div>
+        </div>
+        <div class="text-center" data-id="stat-2">
+          <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">500+</div>
+          <div class="text-gray-600 text-sm sm:text-base">Indian Recipes</div>
+        </div>
+        <div class="text-center" data-id="stat-3">
+          <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">50+</div>
+          <div class="text-gray-600 text-sm sm:text-base">Workout Plans</div>
+        </div>
+        <div class="text-center" data-id="stat-4">
+          <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">24/7</div>
+          <div class="text-gray-600 text-sm sm:text-base">Health Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 lg:py-24 bg-gray-50" data-id="features-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6" data-id="features-title">
+          Everything You Need for a <span class="text-primary">Healthy Life</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-id="features-description">
+          Comprehensive health tracking with Indian cultural context and personalized recommendations
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-id="feature-1">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="activity" class="w-8 h-8 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Fitness Tracking</h3>
+          <p class="text-gray-600 mb-4">Track steps, workouts, yoga sessions, and calories with Indian context like "walked around India Gate"</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Daily step counter</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Yoga & traditional exercises</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Calorie burn calculator</li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-id="feature-2">
+          <div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="apple" class="w-8 h-8 text-secondary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Indian Nutrition</h3>
+          <p class="text-gray-600 mb-4">Log meals from extensive Indian food database with nutritional analysis</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>500+ Indian dishes</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Vegetarian/Vegan options</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Regional specialties</li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-id="feature-3">
+          <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="droplets" class="w-8 h-8 text-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Hydration & Sleep</h3>
+          <p class="text-gray-600 mb-4">Monitor water intake and sleep patterns with smart reminders</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Water intake tracker</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Sleep quality analysis</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Smart reminders</li>
+          </ul>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-id="feature-4">
+          <div class="w-16 h-16 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="brain" class="w-8 h-8 text-purple-500"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">AI Insights</h3>
+          <p class="text-gray-600 mb-4">Get personalized recommendations based on your lifestyle and goals</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Smart analytics</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Progress predictions</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Goal optimization</li>
+          </ul>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-id="feature-5">
+          <div class="w-16 h-16 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="users" class="w-8 h-8 text-orange-500"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Healthcare Connect</h3>
+          <p class="text-gray-600 mb-4">Connect with doctors and trainers for professional guidance</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Doctor consultations</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Trainer programs</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Health reports</li>
+          </ul>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-id="feature-6">
+          <div class="w-16 h-16 bg-pink-500/10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="globe" class="w-8 h-8 text-pink-500"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Multi-Language</h3>
+          <p class="text-gray-600 mb-4">Available in English and Hindi with more regional languages coming</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>English & Hindi</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Voice input support</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Cultural context</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Indian Context Section -->
+  <section class="py-16 lg:py-24 bg-white" data-id="indian-context-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div data-id="context-content">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Built for <span class="text-primary">Indian Lifestyles</span>
+          </h2>
+          <p class="text-xl text-gray-600 mb-8">
+            We understand that health isn't one-size-fits-all. Our platform embraces Indian culture, food habits, and lifestyle patterns.
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4" data-id="context-item-1">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="utensils" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Regional Cuisine Database</h3>
+                <p class="text-gray-600">From Bengali fish curry to Gujarati dhokla, track nutrition across all Indian cuisines with accurate calorie and nutrient data.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4" data-id="context-item-2">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="map-pin" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Cultural Fitness Context</h3>
+                <p class="text-gray-600">"You've walked the distance from Mumbai to Pune!" - Get motivational insights that resonate with Indian geography and culture.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4" data-id="context-item-3">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="heart" class="w-6 h-6 text-primary"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Traditional Wellness</h3>
+                <p class="text-gray-600">Incorporate yoga, pranayama, Ayurvedic principles, and traditional Indian exercises into your daily routine.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center" data-id="context-image">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=500&fit=crop&crop=center" 
+               alt="Indian healthy food" 
+               class="rounded-2xl shadow-2xl w-full max-w-lg object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 lg:py-24 bg-gray-50" data-id="testimonials-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6" data-id="testimonials-title">
+          What Our Users Say
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-id="testimonials-description">
+          Real stories from people who transformed their health journey with us
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg" data-id="testimonial-1">
+          <div class="flex items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" 
+                 alt="User" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h4 class="font-semibold text-gray-900">Raj Patel</h4>
+              <p class="text-gray-600 text-sm">Software Engineer, Mumbai</p>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">"Finally, an app that understands my vegetarian lifestyle! The regional food database is incredible - I can log my mom's dal-chawal accurately."</p>
+          <div class="flex text-yellow-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-lg" data-id="testimonial-2">
+          <div class="flex items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" 
+                 alt="User" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h4 class="font-semibold text-gray-900">Priya Sharma</h4>
+              <p class="text-gray-600 text-sm">Doctor, Delhi</p>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">"As a healthcare professional, I recommend this to all my patients. The cultural context and Indian food database make it so relevant for our population."</p>
+          <div class="flex text-yellow-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-lg" data-id="testimonial-3">
+          <div class="flex items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" 
+                 alt="User" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h4 class="font-semibold text-gray-900">Arjun Kumar</h4>
+              <p class="text-gray-600 text-sm">Fitness Trainer, Bangalore</p>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">"Lost 15kg in 6 months! The yoga integration and traditional exercise tracking helped me stay connected to Indian fitness traditions while achieving my goals."</p>
+          <div class="flex text-yellow-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Preview Section -->
+  <section class="py-16 lg:py-24 bg-white" data-id="app-preview-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6" data-id="preview-title">
+          See Your Health Dashboard in Action
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-id="preview-description">
+          Beautiful, intuitive interface designed for easy tracking and meaningful insights
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-8 rounded-2xl" data-id="preview-1">
+          <div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+            <canvas id="stepsChart" width="250" height="150"></canvas>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Daily Activity</h3>
+          <p class="text-gray-600">Track steps, calories, and active minutes with beautiful visualizations</p>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-2xl" data-id="preview-2">
+          <div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-gray-600">Water Intake</span>
+                <span class="font-semibold text-primary">6/8 glasses</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-accent h-3 rounded-full" style="width: 75%"></div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-600">Sleep</span>
+                <span class="font-semibold text-purple-600">7.5 hrs</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-purple-500 h-3 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Health Metrics</h3>
+          <p class="text-gray-600">Monitor hydration, sleep, and other vital health indicators</p>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-2xl" data-id="preview-3">
+          <div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <span class="text-gray-700">2 Rotis + Dal</span>
+                <span class="text-primary font-semibold">320 cal</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <span class="text-gray-700">1 Bowl Rice</span>
+                <span class="text-primary font-semibold">150 cal</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <span class="text-gray-700">Curd</span>
+                <span class="text-primary font-semibold">80 cal</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Meal Tracking</h3>
+          <p class="text-gray-600">Log Indian meals with accurate nutritional information</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-r from-primary to-secondary text-white" data-id="cta-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" data-id="cta-title">
+        Start Your Health Journey Today
+      </h2>
+      <p class="text-xl mb-8 text-gray-100 max-w-2xl mx-auto" data-id="cta-description">
+        Join thousands of Indians who are already living healthier lives with our comprehensive health tracking platform.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="signup.html" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg text-lg" data-id="cta-signup">
+          Get Started Free
+        </a>
+        <a href="#features" class="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors text-lg" data-id="cta-learn-more">
+          Learn More
+        </a>
+      </div>
+      <p class="text-gray-200 text-sm mt-6" data-id="cta-note">
+        No credit card required • Free forever • Cancel anytime
+      </p>
+    </div>
+  </section>
+
+  <div id="footer-container" data-source="components/footer.html"></div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    
+    // Load all shared components
+    await loadComponent('#navbar-container');
+    await loadComponent('#footer-container');
+    
+    // Initialize icons after components are loaded
+    lucide.createIcons();
+    
+    // Initialize charts
+    const ctx = document.getElementById('stepsChart')?.getContext('2d');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          datasets: [{
+            label: 'Steps',
+            data: [8000, 9500, 7200, 10500, 8800, 6500, 9200],
+            borderColor: '#16a34a',
+            backgroundColor: 'rgba(22, 163, 74, 0.1)',
+            tension: 0.4,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                display: false
+              }
+            },
+            x: {
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      });
+    }
+  </script>
+
+  <script type="module" src="scripts/home.js"></script>
+</body>
+</html>

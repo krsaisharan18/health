@@ -1,0 +1,69 @@
+<nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50" data-id="main-navbar">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3" data-id="nav-logo">
+        <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+          <i data-lucide="heart-pulse" class="w-6 h-6 text-white"></i>
+        </div>
+        <span class="text-2xl font-bold text-gray-900">SwasthyaTrack</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8" data-id="nav-desktop">
+        <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-home">Home</a>
+        <a href="#features" class="text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-features">Features</a>
+        <a href="#about" class="text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-about">About</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-contact">Contact</a>
+      </div>
+
+      <!-- Auth Buttons -->
+      <div class="hidden md:flex items-center space-x-4" data-id="nav-auth">
+        <a href="login.html" class="text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-signin">Sign In</a>
+        <a href="signup.html" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors font-medium" data-id="nav-signup">Get Started</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" data-id="nav-toggle">
+        <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="md:hidden hidden border-t border-gray-200 py-4" data-id="nav-mobile">
+      <div class="space-y-4">
+        <a href="index.html" class="block text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-mobile-home">Home</a>
+        <a href="#features" class="block text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-mobile-features">Features</a>
+        <a href="#about" class="block text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-mobile-about">About</a>
+        <a href="#contact" class="block text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-mobile-contact">Contact</a>
+        <div class="flex flex-col space-y-2 pt-4 border-t border-gray-200">
+          <a href="login.html" class="text-gray-700 hover:text-primary transition-colors font-medium" data-id="nav-mobile-signin">Sign In</a>
+          <a href="signup.html" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors font-medium text-center" data-id="nav-mobile-signup">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('[data-id="nav-toggle"]');
+    const mobileMenu = document.querySelector('[data-id="nav-mobile"]');
+    
+    if (toggle && mobileMenu) {
+      toggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        const icon = toggle.querySelector('[data-lucide]');
+        if (icon) {
+          if (mobileMenu.classList.contains('hidden')) {
+            icon.setAttribute('data-lucide', 'menu');
+          } else {
+            icon.setAttribute('data-lucide', 'x');
+          }
+          lucide.createIcons();
+        }
+      });
+    }
+  });
+</script>
